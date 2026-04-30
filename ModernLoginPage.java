@@ -56,6 +56,7 @@ public class ModernLoginPage extends JFrame {
         showPass.setBackground(cardColor);
         showPass.setForeground(textColor);
         showPass.setFocusPainted(false);
+        showPass.setAlignmentX(Component.CENTER_ALIGNMENT);
         showPass.addActionListener(e -> {
             passField.setEchoChar(showPass.isSelected() ? (char) 0 : '•');
         });
@@ -96,12 +97,13 @@ public class ModernLoginPage extends JFrame {
         JLabel label = new JLabel(text);
         label.setForeground(textColor);
         label.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-        label.setAlignmentX(Component.LEFT_ALIGNMENT);
+        label.setAlignmentX(Component.CENTER_ALIGNMENT);
         return label;
     }
 
     private JTextField createTextField() {
         JTextField field = new JTextField();
+        field.setHorizontalAlignment(JTextField.CENTER);
         field.setMaximumSize(new Dimension(Integer.MAX_VALUE, 40));
         field.setBackground(fieldColor);
         field.setForeground(Color.WHITE);
@@ -116,6 +118,7 @@ public class ModernLoginPage extends JFrame {
 
     private JPasswordField createPasswordField() {
         JPasswordField field = new JPasswordField();
+        field.setHorizontalAlignment(JTextField.CENTER);
         field.setMaximumSize(new Dimension(Integer.MAX_VALUE, 40));
         field.setBackground(fieldColor);
         field.setForeground(Color.WHITE);
@@ -130,7 +133,9 @@ public class ModernLoginPage extends JFrame {
 
     private JButton createButton(String text) {
         JButton button = new JButton(text);
-        button.setMaximumSize(new Dimension(Integer.MAX_VALUE, 45));
+        button.setMaximumSize(new Dimension(200, 45)); // fixed width
+        button.setAlignmentX(Component.CENTER_ALIGNMENT); // center it
+
         button.setBackground(orangeColor);
         button.setForeground(Color.WHITE);
         button.setFont(new Font("Segoe UI", Font.BOLD, 16));
