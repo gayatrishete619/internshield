@@ -5,3 +5,4 @@
 bin/
 *.jar
 mysql-connector-*
+db.properties
